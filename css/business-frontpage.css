@@ -14,6 +14,15 @@ body {
     -o-background-size: cover;
 }
 
+.aboutus-header {
+    height: 400px;
+    background: url('../img/skyline.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 /* Customize the text color and shadow color and to optimize text legibility. */
 
 .tagline {

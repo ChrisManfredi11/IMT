@@ -17,8 +17,12 @@
 
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
+    <link href="css/basic.css" rel="stylesheet">
 
-</head>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+    </head>
 
 <body>
 
@@ -69,7 +73,7 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <h2> Welcome </h2>
+            <h2 class="welcomeheader"> Welcome </h2>
             <div class="col-sm-4">
                 <p>
                     IMT’s Lease Abstracting team provides valuable solutions for Commercial Real Estate executives, owners, property managers and Brokers. If the Lease Abstracting process is giving you headaches or slowing down your due diligence or lease administration, IMT is your solution!
@@ -92,22 +96,36 @@ IMT will provide you with accurate lease abstracts completed by real estate prof
 
 
         <div class="row">
-            <div class="col-lg-6" id="buisnesshours">
-                <h2>Request Information</h2>
-            <form class="requestinfo"action="/loginaction" method="post">
-            <p>Name <input type="text" name="name" class="form" placeholder="Enter Username"></p>
-            <p>Phone <input type="phone" name="phone" class="form"  placeholder="Enter Password"></p>
-            <p>Email <input type="email" name="email" class="form"  placeholder="Enter Email"/><p>
-            <p> Request <textarea type="text" name="request" class="form" placeholder="What is your request"/></textarea></p>
-            <br><input type="submit" name="submit" class="submit" value="submit"/>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="requestinformation">
+            <form action="mail.php" method="POST">
+                <h2 id="request_info"> Request Information </h2>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="exampleInputName2">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">Phone</label>
+                        <input type="phone" class="form-control" id="exampleInputEmail2" placeholder="800-568-5672">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Request:</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                <button type="submit" class="btn btn-default" id="requestbutton">Request Information</button>
             </form>
             </div>
 
-            <div class="col-lg-6" id="buisnesshours">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="buisnesshours">
+                <h1> Services offered Nationwide! </h1>
                 <h2> Buisness Hours </h2>
-                <h4> Monday - Friday </h4>
+                <h3> Monday - Friday </h3>
                 <p> 9:00 - 5:00 EST </p>
-                <h4> Saturday </h4>
+                <h3> Saturday </h3>
                 <p> By Appointment </p>
             </div>
         </div>

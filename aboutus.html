@@ -17,8 +17,12 @@
 
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
+    <link href="css/basic.css" rel="stylesheet">
 
-</head>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+    </head>
 
 <body>
 
@@ -57,11 +61,10 @@
 
     <!-- Image Background Page Header -->
     <!-- Note: The background image is set within the business-casual.css file. -->
-    <header class="business-header">
+    <header class="aboutus-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="tagline">About IMT Lease Abstracts</h1>
                 </div>
             </div>
         </div>
@@ -70,28 +73,58 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <h2> Meet The Team </h2>
+            <h2 class="welcomeheader"> Meet The Team </h2>
             <div class="col-lg-6">
                 <img src="img/marynasi.jpg" id="marynasi">
                 <h4> Mary Nasi Graham, Director of Lease Administration </h4>
                 <p> Mary has been involved in the Commercial Real Estate Industry for over 20 years. Her career began in Manhattan, NY at Silverstein Properties, Inc. as a Lease Administrator. In a few short years, Mary was hired by Williams Real Estate Co., Inc, as their Director of Lease Administration. Having further developed her expertise and analytical skills while working at these major real estate companies and recognizing the need for cutting edge strategies and solutions to the ever-increasing complexity of the real estate industry, Mary formed IMT Real Estate Solutions, Inc. </p>
             </div>
             <div class="col-lg-6">
-                <img src="img/donna.jpg" id="donna">
-                <h4> Donna Hogan, Assistant </h4>
-                <p> Donna has assisted IMT Lease Abstracts in all aspects of the company </p>
+                <img src="img/michelle.jpeg" id="michelle">
+                <h4> Michelle, Assistant </h4>
+                <p> Michelle has assisted IMT Lease Abstracts in all aspects of the company </p>
             </div>
         </div>
 
         <hr>
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="buisnesshours">
-                <h4> Interested in learning more? </h4>
-                <button type="button" id="contactus"> Contact Us</button>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="learningmore">
+            <div id="content">
+                <div id='basic-modal'>
+                    <h2 id="learningmoreheader"> Interested in learning more? </h2>
+                    <input type='button' name='basic' value='Contact Us' class='basic' id="contactusbutton"/>
+                </div>
+        
+            <!-- modal content -->
+            <div id="basic-modal-content">
+            <form action="mail.php" method="POST">
+                <h2 id="request_info"> Request Information </h2>
+                <label for='contact-name'>Name</label><br>
+                <input type='text' id='contact-name' class='contact-input' name='name' tabindex='1001'  /><br>
+                <label for='contact-email'>Email</label><br>
+                <input type='text' id='contact-email' class='contact-input' name='email' tabindex='1002' />
+                <br>
+                <label for='contact-subject'>Subject</label><br>
+                <input type='text' id='contact-subject' class='contact-input' name='subject' value='' tabindex='1003' /><br>
+
+                <label for='contact-message'>Message</label><br>
+                <textarea id='contact-message' class='contact-input' name='message' cols='28' rows='4' tabindex='1004'></textarea>
+                <br/>
+                <label>&nbsp;</label>
+                <button type='submit' class='contact-send contact-button' tabindex='1006'>Send Message</button>
+                <br/>
+                <input type='hidden' name='token' value='" . smcf_token($to) . "'/>
+                </form>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="buisnesshours">
-               <a href="lease-abstracting-language-basic.pdf"><img border="0" alt="lease-abstracting-language-basic.pdf" src="img/spreadsheeticon.png" width="20%" height="20%" id="spreadsheeticon"></a>
+        </div>
+        <!-- preload the images -->
+        <div style='display:none'>
+            <img src='img/x.png' alt=''>
+        </div>
+    </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="pdfsection">
+               <a href="lease-abstracting-language-basic.pdf"><img border="0" alt="lease-abstracting-language-basic.pdf" src="img/spreadsheeticon.png" width="15%" height="15%" id="spreadsheeticon"></a>
                <br>
                <a href="lease-abstracting-language-basic.pdf"><font face="Helvetica, Arial, sans-serif" class="size10 Helvetica10" color="#FFFFFF"><u id="pdffile">lease-abstracting-language-basic.pdf</u></font></a></div>
 
@@ -107,9 +140,9 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <img src="img/facebook.png" id="facebook">
-                    <img src="img/twitter.png" id="twitter">
-                    <img src="img/google_plus.png" id="googleplus">
+                    <a href="https://twitter.com/leaseabstracts"><img src="img/facebook.png" id="facebook"></a>
+                    <a href="https://twitter.com/leaseabstracts"><img src="img/twitter.png" id="twitter"></a>
+                    <a href="https://twitter.com/leaseabstracts"><img src="img/google_plus.png" id="googleplus"></a>
                     <p>  IMT Lease Abstracts ® 301 Route 12, Groton, CT 06340 </p>
                 </div>
             </div>
@@ -123,7 +156,9 @@
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/basic.js"></script>
+    <script type="text/javascript" src="js/jquery.simplemodal.js"></script>
 
 </body>
 
